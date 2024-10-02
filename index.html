@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento Henricar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Orçamento Completo</h1>
+
+        <h2>Informações do Cliente</h2>
+        <form id="clienteForm" class="grid-form">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco" required>
+            </div>
+            <div class="form-group">
+                <label for="contato">Contato:</label>
+                <input type="text" id="contato" name="contato" required>
+            </div>
+            <div class="form-group">
+                <label for="placa">Placa do Carro:</label>
+                <input type="text" id="placa" name="placa" required>
+            </div>
+            <div class="form-group">
+                <label for="modelo">Modelo do Carro:</label>
+                <input type="text" id="modelo" name="modelo" required>
+            </div>
+            <div class="form-group">
+                <label for="modelo">Cor do carro:</label>
+                <input type="text" id="modelo" name="modelo" required>    
+            </div>
+            <div class="form-group">
+                <label for="ano">Ano do Carro:</label>
+                <input type="number" id="ano" name="ano" required>
+            </div>
+            <div class="form-group">
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data" required>
+            </div>
+        </form>
+
+        <h2>Orçamento de Peças e Serviços</h2>
+        <table id="orcamentoTable">
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Quantidade</th>
+                    <th>Valor Unitário (R$)</th>
+                    <th>Subtotal (R$)</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="orcamentoBody">
+            </tbody>
+        </table>
+        <button type="button" id="adicionarLinha">Adicionar Item</button>
+
+        <div class="total">
+            <label for="desconto">Desconto à vista (%):</label>
+            <input type="number" id="desconto" value="0">
+        </div>
+        <div class="total">
+            <span>Total do Orçamento (R$):</span>
+            <span id="totalOrcamento">0.00</span>
+        </div>
+        <div class="total">
+            <span>Total com Desconto (R$):</span>
+            <span id="totalComDesconto">0.00</span>
+        </div>
+
+        <button type="button" id="gerarOrcamento">Gerar Orçamento e PDF</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
