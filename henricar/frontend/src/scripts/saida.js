@@ -8,17 +8,30 @@ async function adicionarSaida() {
         return;
     }
 
-    // Enviar a saída para o servidor
-    await fetch('http://localhost:3000/saida', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ descricao, valor, data })
-    });
+    try {
+        // Enviar a saída para o servidor
+        const response = await fetch('http://localhost:3000/saida', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ descricao, valor, data })
+        });
 
-    // Atualizar o gráfico
-    atualizarGrafico();
+        // Verifica se a requisição foi bem-sucedida
+        if (!response.ok) {
+            throw new Error('Erro na requisição');
+        }
+
+        // Alerta de sucesso
+        alert("Adicionado");
+
+        // Atualizar o gráfico
+        atualizarGrafico();
+    } catch (error) {
+        // Alerta de erro
+        alert("Houve um erro, tente novamente");
+    }
 }
 
 // Função para atualizar o gráfico
