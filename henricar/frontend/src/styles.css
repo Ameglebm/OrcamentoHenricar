@@ -79,3 +79,69 @@ form {
     justify-content: center; /* Centraliza horizontalmente */
     margin-top: 15px; /* Espaçamento acima do botão */
 }
+
+
+/* Estilo da tabela */
+table {
+    width: 100%; /* Largura total */
+    margin-bottom: 40px; /* Margem inferior para separação */
+    border-collapse: collapse; /* Colapsar bordas */
+}
+
+thead {
+    background-color: #07538a; /* Cor de fundo do cabeçalho */
+    color: #0a0000; /* Cor do texto do cabeçalho */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #474545; /* Cor de fundo clara para linhas ímpares */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #1b1b1b; /* Cor de fundo um pouco mais escura para linhas pares */
+}
+
+th, td {
+    border: 1px solid #070707; /* Bordas da tabela */
+    padding: 10px; /* Preenchimento das células */
+    text-align: center; /* Alinhamento do texto */
+}
+
+/* Total em caixa */
+.total {
+    margin-top: 20px; /* Margem superior */
+    display: flex; /* Flexbox para layout */
+    justify-content: space-between; /* Justificar o espaço entre */
+    align-items: center; /* Centralizar verticalmente */
+    background-color: #011d2b; /* Cor de fundo do total */
+    padding: 2px; /* Preenchimento */
+    border-radius: 2px; /* Bordas arredondadas */
+    color: white; /* Cor do texto */
+    font-weight: bold;
+    
+}
+
+/* Estilo dos botões */
+button {
+    padding: 10px 20px; /* Preenchimento */
+    background-color: #00aaff; /* Cor de fundo */
+    color: #080808; /* Cor do texto */
+    border: none; /* Sem bordas */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor pointer */
+    margin-top: 20px; /* Margem superior */
+}
+
+button:hover {
+    background-color: #0077cc; /* Cor ao passar o mouse */
+}
+
+#totalCaixaValue{
+    font-size: 26px;
+    font-weight: bold;
+    font-family: arial black;
+}
+
+#totalCaixa {
+    display: none; /* Oculta o elemento */
+}

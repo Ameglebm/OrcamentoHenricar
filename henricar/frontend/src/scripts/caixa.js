@@ -53,7 +53,7 @@ function gerarGraficoPizza(entradas, saidas, totalCaixa) {
                 },
                 title: {
                     display: true,
-                    text: 'Gráfico de Pizza - Entradas, Saídas e Total em Caixa'
+                    text: 'Entradas, Saídas e Total em Caixa'
                 }
             }
         }
