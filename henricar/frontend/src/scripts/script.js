@@ -56,7 +56,6 @@ function atualizarTotaisServicos() {
     atualizarTotalOrcamento();
 }
 
-// Função para atualizar o total geral do orçamento
 function atualizarTotalOrcamento() {
     const totalProdutos = parseFloat(document.getElementById('totalProdutos').textContent) || 0;
     const totalServicos = parseFloat(document.getElementById('totalServicos').textContent) || 0;
@@ -68,7 +67,6 @@ function atualizarTotalOrcamento() {
     document.getElementById('totalComDesconto').textContent = totalComDesconto.toFixed(2);
 }
 
-// Remover linha
 document.addEventListener('click', function(e) {
     if (e.target.classList.contains('removerLinha')) {
         e.target.closest('tr').remove();
@@ -102,13 +100,11 @@ document.getElementById('gerarOrcamento').addEventListener('click', function() {
         [`Data: ${document.getElementById('data').value}`]
     ];
 
-    // Adicionando tabela de informações do cliente
     const clienteColumns = ["Informação"];
     const clienteRows = clienteInfo;
     
     doc.autoTable(clienteColumns, clienteRows, { startY: 20, theme: 'striped', headStyles: { fillColor: [0, 51, 102], textColor: [255, 255, 255] }, styles: { halign: 'left' } });
 
-    // Títulos da tabela de produtos
     let yOffset = doc.autoTable.previous.finalY + 10;
     doc.setFontSize(14);
     doc.text("Orçamento de Produtos", 105, yOffset, { align: 'center' });
@@ -116,7 +112,6 @@ document.getElementById('gerarOrcamento').addEventListener('click', function() {
     const produtosColumn = ["Descrição", "Quantidade", "Valor Unitário (R$)", "Subtotal (R$)"];
     const produtosRows = [];
 
-    // Preenchendo os dados da tabela de produtos
     const produtosRowsElement = document.querySelectorAll('#orcamentoProdutosBody tr');
     produtosRowsElement.forEach(row => {
         const descricao = row.querySelector('input[type="text"]').value;
@@ -127,18 +122,15 @@ document.getElementById('gerarOrcamento').addEventListener('click', function() {
         produtosRows.push([descricao, quantidade, valorUnitario, subtotal]);
     });
 
-    // Adicionando a tabela de produtos ao PDF
     doc.autoTable(produtosColumn, produtosRows, { startY: yOffset, theme: 'striped', headStyles: { fillColor: [0, 51, 102], textColor: [255, 255, 255] }, styles: { halign: 'center' } });
     yOffset = doc.autoTable.previous.finalY + 10;
 
-    // Títulos da tabela de serviços
     doc.setFontSize(14);
     doc.text("Orçamento de Serviços", 105, yOffset, { align: 'center' });
     yOffset += 10;
     const servicosColumn = ["Descrição", "Quantidade", "Valor Unitário (R$)", "Subtotal (R$)"];
     const servicosRows = [];
 
-    // Preenchendo os dados da tabela de serviços
     const servicosRowsElement = document.querySelectorAll('#orcamentoServicosBody tr');
     servicosRowsElement.forEach(row => {
         const descricao = row.querySelector('input[type="text"]').value;
@@ -149,22 +141,19 @@ document.getElementById('gerarOrcamento').addEventListener('click', function() {
         servicosRows.push([descricao, quantidade, valorUnitario, subtotal]);
     });
 
-    // Adicionando a tabela de serviços ao PDF
     doc.autoTable(servicosColumn, servicosRows, { startY: yOffset, theme: 'striped', headStyles: { fillColor: [0, 51, 102], textColor: [255, 255, 255] }, styles: { halign: 'center' } });
     
-    // Totais
     const totalProdutos = document.getElementById('totalProdutos').textContent;
     const totalServicos = document.getElementById('totalServicos').textContent;
     const totalOrcamento = document.getElementById('totalOrcamento').textContent;
     const totalComDesconto = document.getElementById('totalComDesconto').textContent;
 
-    yOffset = doc.autoTable.previous.finalY + 20; // Pulando duas linhas
+    yOffset = doc.autoTable.previous.finalY + 20; 
     doc.setFontSize(12);
     doc.text(`Total de Produtos: R$ ${totalProdutos}`, 10, yOffset);
     doc.text(`Total de Serviços: R$ ${totalServicos}`, 10, yOffset + 10);
     doc.text(`Total do Orçamento: R$ ${totalOrcamento}`, 10, yOffset + 20);
     doc.text(`Total com Desconto: R$ ${totalComDesconto}`, 10, yOffset + 30);
 
-    // Salvar PDF
     doc.save('orcamento.pdf');
 });

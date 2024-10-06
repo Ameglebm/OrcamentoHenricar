@@ -4,7 +4,6 @@ const { PrismaClient } = require('@prisma/client');
 const router = express.Router();
 const prisma = new PrismaClient();
 
-// Rota para adicionar uma entrada
 router.post('/', async (req, res) => {
     const { descricao, valor, data } = req.body;
     const entrada = await prisma.entrada.create({

@@ -55,7 +55,6 @@ form {
     align-items: center;
 }
 
-/* Botão estilizado */
 .button-container {
     margin-top: 15px;
 }
@@ -75,65 +74,61 @@ form {
 }
 
 .button-container {
-    display: flex; /* Adiciona a propriedade flex */
-    justify-content: center; /* Centraliza horizontalmente */
-    margin-top: 15px; /* Espaçamento acima do botão */
+    display: flex; 
+    justify-content: center; 
+    margin-top: 15px; 
 }
 
-
-/* Estilo da tabela */
 table {
-    width: 100%; /* Largura total */
-    margin-bottom: 40px; /* Margem inferior para separação */
-    border-collapse: collapse; /* Colapsar bordas */
+    width: 100%; 
+    margin-bottom: 40px; 
+    border-collapse: collapse; 
 }
 
 thead {
-    background-color: #07538a; /* Cor de fundo do cabeçalho */
-    color: #0a0000; /* Cor do texto do cabeçalho */
+    background-color: #07538a; 
+    color: #0a0000; 
 }
 
 tbody tr:nth-child(odd) {
-    background-color: #474545; /* Cor de fundo clara para linhas ímpares */
+    background-color: #474545; 
 }
 
 tbody tr:nth-child(even) {
-    background-color: #1b1b1b; /* Cor de fundo um pouco mais escura para linhas pares */
+    background-color: #1b1b1b; 
 }
 
 th, td {
-    border: 1px solid #070707; /* Bordas da tabela */
-    padding: 10px; /* Preenchimento das células */
-    text-align: center; /* Alinhamento do texto */
+    border: 1px solid #070707; 
+    padding: 10px; 
+    text-align: center; 
 }
 
-/* Total em caixa */
 .total {
-    margin-top: 20px; /* Margem superior */
-    display: flex; /* Flexbox para layout */
-    justify-content: space-between; /* Justificar o espaço entre */
-    align-items: center; /* Centralizar verticalmente */
-    background-color: #011d2b; /* Cor de fundo do total */
-    padding: 2px; /* Preenchimento */
-    border-radius: 2px; /* Bordas arredondadas */
-    color: white; /* Cor do texto */
+    margin-top: 20px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: #011d2b; 
+    padding: 2px; 
+    border-radius: 2px; 
+    color: white; 
     font-weight: bold;
     
 }
 
-/* Estilo dos botões */
 button {
-    padding: 10px 20px; /* Preenchimento */
-    background-color: #00aaff; /* Cor de fundo */
-    color: #080808; /* Cor do texto */
-    border: none; /* Sem bordas */
-    border-radius: 5px; /* Bordas arredondadas */
-    cursor: pointer; /* Cursor pointer */
-    margin-top: 20px; /* Margem superior */
+    padding: 10px 20px; 
+    background-color: #00aaff; 
+    color: #080808; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    margin-top: 20px; 
 }
 
 button:hover {
-    background-color: #0077cc; /* Cor ao passar o mouse */
+    background-color: #0077cc; 
 }
 
 #totalCaixa{

@@ -10,7 +10,7 @@ async function adicionarSaida() {
 
     try {
         // Enviar a saída para o servidor
-        const response = await fetch('http://localhost:3000/saida', {
+        const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/saida', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -18,23 +18,18 @@ async function adicionarSaida() {
             body: JSON.stringify({ descricao, valor, data })
         });
 
-        // Verifica se a requisição foi bem-sucedida
         if (!response.ok) {
             throw new Error('Erro na requisição');
         }
 
-        // Alerta de sucesso
         alert("Adicionado");
 
-        // Atualizar o gráfico
         atualizarGrafico();
     } catch (error) {
-        // Alerta de erro
         alert("Houve um erro, tente novamente");
     }
 }
 
-// Função para atualizar o gráfico
 async function atualizarGrafico() {
     const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/saida'); http://localhost:3000/saida
     const saidas = await response.json();
@@ -56,5 +51,4 @@ async function atualizarGrafico() {
     });
 }
 
-// Carregar dados iniciais no gráfico ao abrir a página
 window.onload = atualizarGrafico;

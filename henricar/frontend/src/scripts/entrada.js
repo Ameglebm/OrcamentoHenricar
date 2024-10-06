@@ -9,7 +9,6 @@ async function adicionarEntrada() {
     }
 
     try {
-        // Enviar a entrada para o servidor
         const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/entrada', {
             method: 'POST',
             headers: {
@@ -19,12 +18,11 @@ async function adicionarEntrada() {
         });
 
         if (response.ok) {
-            alert("Entrada adicionada com sucesso!");
+            alert("Adicionado");
         } else {
             alert("Ocorreu um erro. Tente novamente.");
         }
 
-        // Atualizar o gráfico
         atualizarGrafico();
     } catch (error) {
         alert("Ocorreu um erro. Tente novamente.");
@@ -32,9 +30,8 @@ async function adicionarEntrada() {
     }
 }
 
-// Função para atualizar o gráfico
 async function atualizarGrafico() {
-    const response = await fetch('http://localhost:3000/entrada');
+    const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/entrada');
     const entradas = await response.json();
 
     const ctx = document.getElementById('graficoEntrada').getContext('2d');
@@ -54,5 +51,4 @@ async function atualizarGrafico() {
     });
 }
 
-// Carregar dados iniciais no gráfico ao abrir a página
 window.onload = atualizarGrafico;

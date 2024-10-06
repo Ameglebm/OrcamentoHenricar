@@ -2,10 +2,8 @@ async function mostrarTotalCaixa() {
     const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/caixa');
     const { entradas, saidas, totalCaixa } = await response.json();
 
-    // Mostrar o total em caixa
     document.getElementById('totalCaixa').innerText = ` R$ ${totalCaixa.toFixed(2)}`;
 
-    // Preencher a tabela de entradas
     const tabelaEntradas = document.getElementById('tabelaEntradas').getElementsByTagName('tbody')[0];
     entradas.forEach(entrada => {
         const tr = document.createElement('tr');
@@ -13,7 +11,6 @@ async function mostrarTotalCaixa() {
         tabelaEntradas.appendChild(tr);
     });
 
-    // Preencher a tabela de saídas
     const tabelaSaidas = document.getElementById('tabelaSaidas').getElementsByTagName('tbody')[0];
     saidas.forEach(saida => {
         const tr = document.createElement('tr');
@@ -21,11 +18,9 @@ async function mostrarTotalCaixa() {
         tabelaSaidas.appendChild(tr);
     });
 
-    // Gerar o gráfico de pizza
     gerarGraficoPizza(entradas, saidas, totalCaixa);
 }
 
-// Função para gerar o gráfico de pizza
 function gerarGraficoPizza(entradas, saidas, totalCaixa) {
     const ctx = document.getElementById('graficoPizza').getContext('2d');
 
@@ -60,5 +55,4 @@ function gerarGraficoPizza(entradas, saidas, totalCaixa) {
     });
 }
 
-// Carregar o total em caixa e exibir a tabela e o gráfico ao carregar a página
 window.onload = mostrarTotalCaixa;
