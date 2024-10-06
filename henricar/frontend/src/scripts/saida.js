@@ -36,7 +36,7 @@ async function adicionarSaida() {
 
 // Função para atualizar o gráfico
 async function atualizarGrafico() {
-    const response = await fetch('http://localhost:3000/saida');
+    const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/saida'); http://localhost:3000/saida
     const saidas = await response.json();
 
     const ctx = document.getElementById('graficoSaida').getContext('2d');

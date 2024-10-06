@@ -10,7 +10,7 @@ async function adicionarEntrada() {
 
     try {
         // Enviar a entrada para o servidor
-        const response = await fetch('http://localhost:3000/entrada', {
+        const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/entrada', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
