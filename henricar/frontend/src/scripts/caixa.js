@@ -3,7 +3,7 @@ async function mostrarTotalCaixa() {
     const { entradas, saidas, totalCaixa } = await response.json();
 
     // Mostrar o total em caixa
-    document.getElementById('totalCaixa').innerText = `Total em Caixa: R$ ${totalCaixa.toFixed(2)}`;
+    document.getElementById('totalCaixa').innerText = ` R$ ${totalCaixa.toFixed(2)}`;
 
     // Preencher a tabela de entradas
     const tabelaEntradas = document.getElementById('tabelaEntradas').getElementsByTagName('tbody')[0];
@@ -53,7 +53,7 @@ function gerarGraficoPizza(entradas, saidas, totalCaixa) {
                 },
                 title: {
                     display: true,
-                    text: 'Gráfico de Pizza - Entradas, Saídas e Total em Caixa'
+                    text: 'Entradas, Saídas e Total em Caixa'
                 }
             }
         }

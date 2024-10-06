@@ -8,17 +8,28 @@ async function adicionarEntrada() {
         return;
     }
 
-    // Enviar a entrada para o servidor
-    await fetch('http://localhost:3000/entrada', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ descricao, valor, data })
-    });
+    try {
+        // Enviar a entrada para o servidor
+        const response = await fetch('http://localhost:3000/entrada', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ descricao, valor, data })
+        });
 
-    // Atualizar o gráfico
-    atualizarGrafico();
+        if (response.ok) {
+            alert("Entrada adicionada com sucesso!");
+        } else {
+            alert("Ocorreu um erro. Tente novamente.");
+        }
+
+        // Atualizar o gráfico
+        atualizarGrafico();
+    } catch (error) {
+        alert("Ocorreu um erro. Tente novamente.");
+        console.error('Erro:', error);
+    }
 }
 
 // Função para atualizar o gráfico

@@ -10,7 +10,6 @@
 <body>
     <div class="container">
         <h1>Total em Caixa</h1>
-        <div id="totalCaixa"></div>
 
         <h2>Entradas</h2>
         <table id="tabelaEntradas">
@@ -36,12 +35,19 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Saídas serão inseridas aqui pelo JavaScript -->
             </tbody>
         </table>
 
-        <h2>Gráfico de Pizza</h2>
+        <div class="total">
+            <h2>Total em caixa</h2>
+            <div id="totalCaixa"></div>
+        </div>
+
         <canvas id="graficoPizza" width="400" height="400"></canvas>
+    </div>
+
+    <div class="button-container">
+        <a href="home.html" class="btn">Voltar</a>
     </div>
 
     <script src="../scripts/caixa.js"></script>
