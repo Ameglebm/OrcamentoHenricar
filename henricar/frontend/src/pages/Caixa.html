@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henricar - Total em Caixa</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Total em Caixa</h1>
+        <div id="totalCaixa"></div>
+
+        <h2>Entradas</h2>
+        <table id="tabelaEntradas">
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Valor (R$)</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Entradas serão inseridas aqui pelo JavaScript -->
+            </tbody>
+        </table>
+
+        <h2>Saídas</h2>
+        <table id="tabelaSaidas">
+            <thead>
+                <tr>
+                    <th>Descrição</th>
+                    <th>Valor (R$)</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Saídas serão inseridas aqui pelo JavaScript -->
+            </tbody>
+        </table>
+
+        <h2>Gráfico de Pizza</h2>
+        <canvas id="graficoPizza" width="400" height="400"></canvas>
+    </div>
+
+    <script src="../scripts/caixa.js"></script>
+</body>
+</html>
