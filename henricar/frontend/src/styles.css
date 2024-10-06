@@ -136,12 +136,8 @@ button:hover {
     background-color: #0077cc; /* Cor ao passar o mouse */
 }
 
-#totalCaixaValue{
-    font-size: 26px;
+#totalCaixa{
+    font-size: 25px;
     font-weight: bold;
     font-family: arial black;
-}
-
-#totalCaixa {
-    display: none; /* Oculta o elemento */
 }
