@@ -1,5 +1,5 @@
 async function mostrarTotalCaixa() {
-    const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/caixa');
+    const response = await fetch('http://localhost:3000/caixa');
     const { entradas, saidas, totalCaixa } = await response.json();
 
     document.getElementById('totalCaixa').innerText = ` R$ ${totalCaixa.toFixed(2)}`;

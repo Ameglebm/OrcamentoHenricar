@@ -9,7 +9,7 @@ async function adicionarEntrada() {
     }
 
     try {
-        const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/entrada', {
+        const response = await fetch('http://localhost:3000/entrada', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -31,7 +31,7 @@ async function adicionarEntrada() {
 }
 
 async function atualizarGrafico() {
-    const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/entrada');
+    const response = await fetch('http://localhost:3000/entrada');
     const entradas = await response.json();
 
     const ctx = document.getElementById('graficoEntrada').getContext('2d');
