@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henricar - Saída de Valores</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Saída de Valores</h1>
+        <form id="saidaForm">
+            <input type="text" id="descricao" placeholder="Descrição da despesa">
+            <input type="number" id="valor" placeholder="Valor (R$)">
+            <input type="date" id="data">
+            <button type="button" onclick="adicionarSaida()">Adicionar</button>
+        </form>
+
+        <canvas id="graficoSaida" width="400" height="400"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../scripts/saida.js"></script>
+</body>
+</html>
